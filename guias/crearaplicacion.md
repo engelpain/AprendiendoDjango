@@ -39,7 +39,7 @@
         </p>
         <p>Tal como se muestra en la siguiente imagen:</p>
         <p>
-          <img src="img/imagen1.png" alt="Agregar aplicación">
+          <img src="../img/imagen1.png" alt="Agregar aplicación">
         </p>
       </li>
     </ul>
@@ -55,7 +55,7 @@
         <p> Desde el navegador web se entra al servidor local de Django en la dirección <i>127.0.0.0:8000</i>
         que trae por defecto configurada</p>
         <p>
-          <img src="img/imagen2.png" alt="Run server">
+          <img src="../img/imagen2.png" alt="Run server">
         </p>
       </li>
     </ul>
