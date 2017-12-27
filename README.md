@@ -10,4 +10,7 @@
   <li>
     <a href="guias/instalacion.md"> Guía de instalación de Django </a>
   </li>
+  <li>
+    <a href="guias/crearaplicacion.md"> Guía para crear una aplicación </a>
+  </li>
 </ul>
