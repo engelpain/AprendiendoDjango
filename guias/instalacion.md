@@ -27,9 +27,12 @@ escritos en Python
 
 #### Gestionar Pip:
 
- Instalar Pip:
+Instalar Pip:
+
     # apt-get install python-pip
- Desinstalar Pip:
+
+Desinstalar Pip:
+
     # apt-get remove python-pip
 
 #### Acciones con Pip:
