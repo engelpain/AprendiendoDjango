@@ -1,0 +1,128 @@
+Guía de Intalación de Django
+Centro Nacional de Desarrollo e Investigación de Tecnologías Libres (CENDITEL)
+CENDITEL, Mérida - Venezuela 
+Dirección de Desarrollo 
+Autor: Ing. Angelo Osorio 
+Fecha de Elaboración: 26-12-2017 (dd,mm,aaaa)
+
+// ----------------------------------- Notas del autor [BEGIN] ---------------------------------- //
+
+El símbolo al principio de una línea de comandos indica:
+  $ = hacer la sentencia como usuario
+  # = hacer la sentencia como administrador
+
+// ----------------------------------- Notas del autor [ENDED] ---------------------------------- //
+
+
+
+// ------------------------------ Requisitos de Instalación [BEGIN] ----------------------------- //
+
+Esta guía está realizada usando como sistema Anfitrión Debian 9.3 Stretch, sistema que trae por
+defecto instalado Python 2.7.
+
+La versión de Django utilizada para aprender en este tutorial es la 1.11.8 (LTS) la última
+soportada por Python 2.7.
+
+// ------------------------------ Requisitos de Instalación [ENDED] ----------------------------- //
+
+
+
+
+// ------------------------ Instalando Django desde su comprimido [BEGIN] ----------------------- //
+
+1. Descargar la versión 1.11.8 (LTS) de Django desde su página oficial:
+  https://www.djangoproject.com/download/1.11.8/tarball/
+
+2. Descomprimir el archivo:
+  $ tar xzvf Django-1.11.8.tar.gz
+
+3. Entrar en el directorio que se creó al descomprimir:
+  $ cd Django-1.11.8
+
+4. Ejecutar el instalador de Django:
+  # python setup.py install
+
+5. ¡Listo! ya se tiene instalado Django en el equipo
+
+// ------------------------ Instalando Django desde su comprimido [ENDED] ----------------------- //
+
+
+
+// ----------------------------------------- Pip [BEGIN] ---------------------------------------- //
+
+Nota: Pip es un sistema de gestión de paquetes utilizado para instalar y administrar paquetes de
+software escritos en Python.
+
+Gestionar Pip:
+
+  Instalar Pip:
+    # apt-get install python-pip
+
+  Desinstalar Pip:
+    # apt-get remove python-pip
+
+
+Acciones con Pip:
+
+  Buscar un paquete
+    $ pip search nombredelpaquete
+
+  Instalar un paquete usando Pip
+    $ pip install nombredelpaquete
+  Instalar un paquete en una versión específica usando Pip
+    $ pip install nombredelpaquete==version
+
+  Remover un paquete
+    $ pip unistall nombredelpaquete
+
+  Listar los paquetes instalados:
+    $ pip freeze
+
+  Obtener información detallada de un paquete:
+    $ pip show nombredelpaquete
+
+  Verificar que estén instaladas las dependencias de un paquete:
+    $ pip check nombredelpaquete
+
+  Ayuda
+    $ pip help
+
+Apuntar a un mirror:
+
+Para utilizar un mirror de Python en específico se modifica (o crea, si el fichero no existe, y si
+el directorio tampoco existe también se debe crear) el archivo pip.conf, que está ubicado en el
+directorio .pip dentro del home del usuario, usando un editor de texto, por ejemplo nano.
+  $ nano ~/.pip/pip.conf
+
+Dentro del archivo escribir la dirección del mirror, por ejemplo:
+
+[global]
+index-url = http://pypi.cenditel/simple/
+
+A partir del guardado del archivo se utilizará como mirror principal. En caso de ser un mirror no
+firmado como confiable se utiliza la directiva --trusted-host nombremirror para que acceda, ejemplo:
+  $ pip install package_name --trusted-host pypi.cenditel
+
+
+// ----------------------------------------- Pip [ENDED] ---------------------------------------- //
+
+
+
+// ----------------------------- Gestionando Django con Pip [BEGIN] ----------------------------- //
+
+Nota importante: Python y Django (por lo general) siempre van de la mano con entornos virtuales,
+por ello los permisos para instalar paquetes usando pip varían, desde la máquina anfitrión se
+requiere permiso de superusuario apra instalar paquetes, sin embargo para instalar desde un entorno
+virtual no.
+
+Instalar la versión más reciente de Django:
+  $ pip install django
+
+Para solicitar la instalación de una versión en específico de Django, basta con agregar ==version
+al final de la sentencia anterior. Por ejemplo, para instalar la versión 2.0:
+  $ pip install Django==2.0
+
+Desinstalar Django:
+  $ pip uninstall django
+
+// ----------------------------- Gestionando Django con Pip [ENDED] ----------------------------- //
