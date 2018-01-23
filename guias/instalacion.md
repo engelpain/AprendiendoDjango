@@ -1,8 +1,8 @@
 ## Guía de Instalación de Django 1.11.9 (LTS)
-Centro Nacional de Desarrollo e Investigación de Tecnologías Libres (CENDITEL)
-[CENDITEL](https://www.cenditel.gob.ve/), Mérida - Venezuela
-Dirección de Desarrollo
-Autor: [Ing. Angelo Osorio](https://twitter.com/Engel_PAIN)
+Centro Nacional de Desarrollo e Investigación de Tecnologías Libres (CENDITEL) <br>
+[CENDITEL](https://www.cenditel.gob.ve/), Mérida - Venezuela<br>
+Dirección de Desarrollo<br>
+Autor: [Ing. Angelo Osorio](https://twitter.com/Engel_PAIN)<br>
 Fecha de Elaboración: 26-12-2017 (dd,mm,aaaa)
 
 
@@ -34,27 +34,36 @@ escritos en Python
 
 #### Acciones con Pip:
 
- Buscar un paquete
+Buscar un paquete
+
     $ pip search nombredelpaquete
 
- Instalar un paquete usando Pip
+Instalar un paquete usando Pip
+
     $ pip install nombredelpaquete
- Instalar un paquete en una versión específica usando Pip
+
+Instalar un paquete en una versión específica usando Pip
+
     $ pip install nombredelpaquete==version
 
-  Remover un paquete
+Remover un paquete
+
     $ pip unistall nombredelpaquete
 
-  Listar los paquetes instalados:
+Listar los paquetes instalados:
+
     $ pip freeze
 
-  Obtener información detallada de un paquete:
+Obtener información detallada de un paquete:
+
     $ pip show nombredelpaquete
 
-  Verificar que estén instaladas las dependencias de un paquete:
+Verificar que estén instaladas las dependencias de un paquete:
+
     $ pip check nombredelpaquete
 
-  Ayuda
+Ayuda
+
     $ pip help
 
 #### Apuntar a un mirror pip:
