@@ -7,9 +7,10 @@ Fecha de Elaboración: 24-01-2018 (dd,mm,aaaa)
 
 ### Notas del autor
 El símbolo al principio de una línea de comandos indica:
-    `$ = hacer la sentencia como usuario`
-    `# = hacer la sentencia como administrador`
-
+```
+    $ = hacer la sentencia como usuario
+    # = hacer la sentencia como administrador
+```
 ### Virtual Environments
 
 * Instalar: 
