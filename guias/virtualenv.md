@@ -14,21 +14,40 @@ El símbolo al principio de una línea de comandos indica:
 ### Virtual Environments
 
 * Instalar: 
-    `# apt-get install python-virtualenv`
+```
+    # apt-get install python-virtualenv
+```
+
 
 * Remover:
-    `# apt-get remove python-virtualenv`
+```
+    # apt-get remove python-virtualenv
+```
+
 
 * Crear un entorno virtual
-    `$ virtualenv nombredelentorno`
+```
+    $ virtualenv nombredelentorno
+```
+
 
 * Activar el entorno virtual
-    `$ source nombredelentorno/bin/activate`
+```
+    $ source nombredelentorno/bin/activate
+```
+
 
 * Desactivar el entorno virtual
-    `$ deactivate`
+```
+    $ deactivate```
+
 
 * Elegir la versión de python del entorno
-    `$ virtualenv -p versióndepython nombreentorno` <br>
+```
+    $ virtualenv -p versióndepython nombreentorno
+```
+     <br>
 Ejemplo:
-    `$ virtualenv -p python3.5 EntornoPythonTres`
+```
+    $ virtualenv -p python3.5 EntornoPythonTres
+```
