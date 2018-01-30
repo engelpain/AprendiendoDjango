@@ -28,39 +28,60 @@ escritos en Python
 #### Gestionar Pip:
 
 * Instalar Pip:
-    `# apt-get install python-pip`
-
+```
+    # apt-get install python-pip
+```
 * Desinstalar Pip:
-    `# apt-get remove python-pip`
+```
+    # apt-get remove python-pip
+```
 
 #### Acciones con Pip:
 * Buscar un paquete
-    `$ pip search nombredelpaquete`
+```
+    $ pip search nombredelpaquete
+```
 
 * Instalar un paquete usando Pip
-    `$ pip install nombredelpaquete`
+```
+    $ pip install nombredelpaquete
+```
 
 * Instalar un paquete en una versión específica usando Pip
-    `$ pip install nombredelpaquete==version`
+```
+    $ pip install nombredelpaquete==version
+```
 
 * Remover un paquete
-    `$ pip unistall nombredelpaquete`
+```
+    $ pip unistall nombredelpaquete
+```
 
 * Listar los paquetes instalados:
-    `$ pip freeze`
+```
+    $ pip freeze
+```
 
 * Obtener información detallada de un paquete:
-    `$ pip show nombredelpaquete`
+```
+    $ pip show nombredelpaquete
+```
 
 * Verificar que estén instaladas las dependencias de un paquete:
-    `$ pip check nombredelpaquete`
+```
+    $ pip check nombredelpaquete
+```
 
 * Ayuda
-    `$ pip help`
+```
+    $ pip help
+```
 
 #### Apuntar a un mirror pip:
 Para utilizar un mirror de Python en específico se modifica el archivo *pip.conf*
-    `$ nano ~/.pip/pip.conf`
+```
+    $ nano ~/.pip/pip.conf
+```
 > Nota: En caso que el directorio .pip no exista, se debe crear, en caso que de que el archivo no
 exista, se debe crear el archivo.
 
@@ -71,7 +92,9 @@ index-url = http://pypi.cenditel/simple/
 ```
 Luego de guardar el archivo, se utiliza como mirror principal. En caso de ser un mirror no firmado
 como confiable se utiliza la directiva *--trusted-host nombremirror* para que acceda, ejemplo:
-    `$ pip install package_name --trusted-host pypi.cenditel`
+```
+    $ pip install package_name --trusted-host pypi.cenditel
+```
 
 ### Instalando Django desde pip
 
@@ -80,27 +103,38 @@ los permisos para instalar paquetes usando pip varían, desde la máquina anfitr
 permisos de superusuario, sin embargo para instalar desde un entorno virtual no.
 
 * Instalar la versión más reciente de Django:
-    `$ pip install django`
+```
+    $ pip install django
+```
 
 * Para solicitar la instalación de una versión en específico de Django, basta con agregar ==version
 al final de la sentencia anterior. Por ejemplo, para instalar la versión 2.0:
-    `$ pip install Django==2.0`
+```
+    $ pip install Django==2.0
+```
 
 * Desinstalar Django:
-    `$ pip uninstall django`
-
+```
+    $ pip uninstall django
+```
 
 ### Instalando Django desde su comprimido
 1. Descargar la versión 1.11.9 (LTS) de Django desde su
 [página oficial](https://www.djangoproject.com/download/1.11.9/tarball/)
 
 2. Descomprimir el archivo:
-    `$ tar xzvf Django-1.11.9.tar.gz`
+```
+    $ tar xzvf Django-1.11.9.tar.gz
+```
 
 3. Entrar en el directorio que se creó al descomprimir:
-    `$ cd Django-1.11.9`
+```
+    $ cd Django-1.11.9
+```
 
 4. Ejecutar el instalador de Django:
-    `# python setup.py install`
+```
+    # python setup.py install
+```
 
 ¡Listo! ya se tiene instalado Django en el equipo
