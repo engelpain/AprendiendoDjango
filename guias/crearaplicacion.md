@@ -70,23 +70,23 @@ DATABASES = {
     }
 }
 ```
-  4.1. La línea `'ENGINE'` define el gestor de base de datos con el que se enlazará. Por defecto
-  está enlazado con **sqlite**, pero se puede cambiar a otros gestores de base de datos.
-    - Mysql: `'ENGINE': 'django.db.backends.mysql',`
-    - PostgreSQL: `'ENGINE': 'django.db.backends.postgresql_psycopg2',`
+    4.1. La línea `'ENGINE'` define el gestor de base de datos con el que se enlazará. Por defecto
+    está enlazado con **sqlite**, pero se puede cambiar a otros gestores de base de datos.
+      - Mysql: `'ENGINE': 'django.db.backends.mysql',`
+      - PostgreSQL: `'ENGINE': 'django.db.backends.postgresql_psycopg2',`
 
-  4.2. La `'NAME'` define el nombre de la base de datos: `'NAME': 'mysite',`
+    4.2. La `'NAME'` define el nombre de la base de datos: `'NAME': 'mysite',`
 
-  4.3. Agregar la tupla `'USER'` para agregar el usuario que tiene acceso a esa base de datos:
-  `'USER': 'usuario',`
-  
-  4.4. Agregar la tupla `'PASSWORD'` para agregar la contraseña del usuario que tiene acceso a esa
-  base de datos: `'PASSWORD': 'root123qwe',`
-  
-  4.5. Agregar la tupla `'HOST'` para asignar la dirección a donde apuntará la conexión:
-  `'HOST': 'localhost',`
-  
-  4.6. Agregar la tupla `'PORT'` para : `'PORT': '5432',`
+    4.3. Agregar la tupla `'USER'` para agregar el usuario que tiene acceso a esa base de datos:
+    `'USER': 'usuario',`
+    
+    4.4. Agregar la tupla `'PASSWORD'` para agregar la contraseña del usuario que tiene acceso a esa
+    base de datos: `'PASSWORD': 'root123qwe',`
+    
+    4.5. Agregar la tupla `'HOST'` para asignar la dirección a donde apuntará la conexión:
+    `'HOST': 'localhost',`
+    
+    4.6. Agregar la tupla `'PORT'` para : `'PORT': '5432',`
 
 Debería quedar así:
 ```
