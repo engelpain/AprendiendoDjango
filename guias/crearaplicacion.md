@@ -8,10 +8,10 @@ Fecha de Elaboración: 26-12-2017 (dd,mm,aaaa)
 ### Notas del autor
 El símbolo al principio de una línea de comandos indica:
 ```
-    $ = hacer la sentencia como usuario
-    # = hacer la sentencia como administrador
-    ~$ = indica que está en el home del usuario
-    ~/django$ = indica que está en un directorio llamado django
+  $ = hacer la sentencia como usuario
+  # = hacer la sentencia como administrador
+  ~$ = indica que está en el home del usuario
+  ~/django$ = indica que está en un directorio llamado django
 ```
 
 ### Pasos para crear un proyecto
@@ -24,7 +24,7 @@ El símbolo al principio de una línea de comandos indica:
 ### Construir un nuevo proyecto en Django
 Construir un nuevo proyecto:
 ```
-    ~$ django-admin.py startproject nombredelproyecto
+  ~$ django-admin.py startproject nombredelproyecto
 ```
 Django crea el siguiente esquema de archivos:
 ```
@@ -111,7 +111,7 @@ DATABASES = {
 
 1. Correr el servidor local de Django
 ```
-    $ python manage.py runserver
+  ~$ python manage.py runserver
 ```
 2. Desde el navegador web se entra al servidor local de Django en la dirección _127.0.0.0:8000_ o
 _localhost:8000_
@@ -120,23 +120,23 @@ _localhost:8000_
 ### Crear una aplicación con Django
 1. Crear el directorio donde estarán las aplicaciones, el nombre del directorio no tiene relevancia:
 ```
-    ~/nombredelproyecto$ mkdir apps
+  ~/nombredelproyecto$ mkdir apps
 ```
 
 2. Entrar en el directorio y crear un archivo `__init__.py`, esto para hacerle saber a Django que es
 un paquete o que hay paquetes dentro de él).
 ```
-    ~/nombredelproyecto/apps$ touch __init__.py
+  ~/nombredelproyecto/apps$ touch __init__.py
 ```
 
 3. Crear una nueva aplicación:
 ```
-    ~/nombredelproyecto/apps$ django-admin.py startapp nombreapp
+  ~/nombredelproyecto/apps$ django-admin.py startapp nombreapp
 ```
 
 4. Agregar la aplicación al proyecto modificando el archivo `nombredelproyecto/settings.py`:
 ```
-    ~/nombredelproyecto$ nano settings.py
+  ~/nombredelproyecto$ nano settings.py
 ```
 
 5. Allí hay que buscar la sección `INSTALLED_APPS` y agregar la nueva aplicación:
@@ -156,7 +156,7 @@ INSTALLED_APPS = [
 
 Los modelos son objetos que utiliza Django para determinar el comportamiendo de una aplicación.
 
-Para este ejemplo se creará un modelo que simulará un artículo de un blog.
+1. Crear el modelo, para este ejemplo se creará un modelo que simulará un artículo de un blog.
 
 ```python
 
@@ -166,7 +166,7 @@ from django.utils import timezone
 
 # Modelos del app
 """
-Modelo Post:
+Modelo Articulo:
 Objeto para crear articulos en la aplicacion Blog
 
 Nombre de la clase: Blog
@@ -180,7 +180,7 @@ Metodos de la clase:
     - publish: Agrega la fecha de publicacion al articulo
     - __str__: Muestra el titulo del articulo a la consulta de objetos
 """
-class Post(models.Model):
+class Articulo(models.Model):
     # Atributos
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
@@ -195,4 +195,19 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+```
+2. Hacer las migraciones:
+```shell
+  ~$ python manage.py makemigrations nombreapp
+  Migrations for 'nombreapp':
+    0001_initial.py:
+    - Create model Articulo
+```
+3. Migrar las migraciones hechas:
+```shell
+~$ python manage.py migrate blog
+Operations to perform:
+  Apply all migrations: blog
+Running migrations:
+  Applying blog.0001_initial... OK
 ```
