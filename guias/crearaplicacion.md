@@ -62,7 +62,7 @@ nombredelproyecto/
 ```
 
 4. Allí hay que buscar la sección `DATABASES` y agregar y reemplazar los datos, por defecto son:
-```
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -89,7 +89,7 @@ DATABASES = {
   4.6. Agregar la tupla `'PORT'` para : `'PORT': '5432',`
 
 Debería quedar así:
-```
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -140,7 +140,7 @@ un paquete o que hay paquetes dentro de él).
 ```
 
 5. Allí hay que buscar la sección `INSTALLED_APPS` y agregar la nueva aplicación:
-```
+```python
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
