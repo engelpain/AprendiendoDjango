@@ -7,20 +7,25 @@ Fecha de Elaboración: 26-12-2017 (dd,mm,aaaa)
 
 ### Notas del autor
 El símbolo al principio de una línea de comandos indica:
-    `$ = hacer la sentencia como usuario`
-    `# = hacer la sentencia como administrador`
-    `~$ = indica que está en el home del usuario`
-    `~/django$ = indica que está en un directorio llamado django`
+```
+    $ = hacer la sentencia como usuario
+    # = hacer la sentencia como administrador
+    ~$ = indica que está en el home del usuario
+    ~/django$ = indica que está en un directorio llamado django
+```
 
 ### Pasos para crear un proyecto
 1. [Construir un nuevo proyecto en Django](#construir-un-nuevo-proyecto-en-django)
-2. [Crear una aplicación](#crear-una-aplicaci%C3%B3n-con-Django)
-3. [Conectar el proyecto con una base de datos](#conectar-el-proyecto-con-una-base-de-datos)
+2. [Conectar el proyecto con una base de datos](#conectar-el-proyecto-con-una-base-de-datos)
 3. [Correr el servidor local](#correr-el-servidor-local)
+4. [Crear una aplicación](#crear-una-aplicaci%C3%B3n-con-Django)
+5. [Crear modelos](#crear-modelos-del-app)
 
 ### Construir un nuevo proyecto en Django
 Construir un nuevo proyecto:
-    `~$ django-admin.py startproject nombredelproyecto`
+```
+    ~$ django-admin.py startproject nombredelproyecto
+```
 Django crea el siguiente esquema de archivos:
 ```
 nombredelproyecto/
@@ -32,21 +37,105 @@ nombredelproyecto/
     wsgi.py
 ```
 
+### Conectar el proyecto con una base de datos
+>Nota: En caso de querer utilizar la base de datos que trae por defecto Django, saltarse este paso
+
+1. Instalar el complemento que requiera Python para enlazar con el gestor de base de datos:
+  - **MySQL**:
+```
+    # apt-get install python-mysqldb
+```
+
+  - **PostgreSQL**:
+```
+    $ pip install psycopg2
+```
+
+2. Crear una base de datos para el proyecto, en un gestor de base de datos, en este caso PostgreSQL:
+```
+    postgres=# CREATE DATABASE nombredelproyecto
+```
+
+3. Abrir el archivo `nombredelproyecto/settings.py`:
+```
+    ~/nombredelproyecto$ nano settings.py
+```
+
+4. Allí hay que buscar la sección `DATABASES` y agregar y reemplazar los datos, por defecto son:
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
+    }
+}
+```
+  4.1. La línea `'ENGINE'` define el gestor de base de datos con el que se enlazará. Por defecto
+  está enlazado con **sqlite**, pero se puede cambiar a otros gestores de base de datos.
+    - Mysql: `'ENGINE': 'django.db.backends.mysql',`
+    - PostgreSQL: `'ENGINE': 'django.db.backends.postgresql_psycopg2',`
+
+  4.2. La `'NAME'` define el nombre de la base de datos: `'NAME': 'mysite',`
+  4.3. Agregar la tupla `'USER'` para agregar el usuario que tiene acceso a esa base de datos:
+  `'USER': 'usuario',`
+  4.4. Agregar la tupla `'PASSWORD'` para agregar la contraseña del usuario que tiene acceso a esa
+  base de datos: `'PASSWORD': 'root123qwe',`
+  4.5. Agregar la tupla `'HOST'` para asignar la dirección a donde apuntará la conexión:
+  `'HOST': 'localhost',`
+  4.6. Agregar la tupla `'PORT'` para : `'PORT': '5432',`
+
+Debería quedar así:
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mysite',
+        'USER': 'engelpain',
+        'PASSWORD': 'root123qwe',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+```
+
+5. Ahora solo usar el comando:
+```
+    ~$ python manage.py migrate
+```
+
+### Correr el servidor local
+
+1. Correr el servidor local de Django
+```
+    $ python manage.py runserver
+```
+2. Desde el navegador web se entra al servidor local de Django en la dirección _127.0.0.0:8000_ o
+_localhost:8000_
+
+
 ### Crear una aplicación con Django
 1. Crear el directorio donde estarán las aplicaciones, el nombre del directorio no tiene relevancia:
-    `~/nombredelproyecto$ mkdir apps`
+```
+    ~/nombredelproyecto$ mkdir apps
+```
 
 2. Entrar en el directorio y crear un archivo `__init__.py`, esto para hacerle saber a Django que es
 un paquete o que hay paquetes dentro de él).
-    `~/nombredelproyecto/apps$ touch __init__.py`
+```
+    ~/nombredelproyecto/apps$ touch __init__.py
+```
 
-4. Crear una nueva aplicación:
-    `~/nombredelproyecto/apps$ django-admin.py startapp nombreapp`
+3. Crear una nueva aplicación:
+```
+    ~/nombredelproyecto/apps$ django-admin.py startapp nombreapp
+```
 
-5. Agregar la aplicación al proyecto modificando el archivo `nombredelproyecto/settings.py`:
-    `~/nombredelproyecto$ nano settings.py`
+4. Agregar la aplicación al proyecto modificando el archivo `nombredelproyecto/settings.py`:
+```
+    ~/nombredelproyecto$ nano settings.py
+```
 
-6. Allí hay que buscar la sección `INSTALLED_APPS` y agregar la nueva aplicación:
+5. Allí hay que buscar la sección `INSTALLED_APPS` y agregar la nueva aplicación:
 ```
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -59,49 +148,15 @@ INSTALLED_APPS = [
 ]
 ```
 
-### Conectar el proyecto con una base de datos
+### Crear modelos del app
 
-1. Instalar el complemento que requiera Python para enlazar con el gestor de base de datos,
-en este caso de PostgreSQL se llama Psycopg:
-    
-1.1. Instalar el complemento con aptitude o apt-get
-    `# apt-get install python-psycopg2`
-    
-1.2. Instalar el complemento con Pip
-    `$ pip install psycopg2`
+Los modelos son objetos que utiliza Django para determinar el comportamiendo de una aplicación.
 
-1. Crear una base de datos para el proyecto, en un gestor de base de datos, en este caso PostgreSQL:
-    `postgres=# CREATE DATABASE nombredelproyecto`
+Para este ejemplo se creará un modelo que simulará un artículo de un blog.
 
-2. Abrir el archivo `nombredelproyecto/settings.py`:
-    `~/nombredelproyecto$ nano settings.py`
-
-3. Allí hay que buscar la sección `DATABASES` y agregar y reemplazar los datos, por defecto son:
-```
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
-    }
-}
-```
-3.1. La línea 'ENGINE' define el gestor de base de datos con el que se enlazará:
-
-
+```python
+# 
+from django.db import models
+from django.utils import timezone
 
 ```
-DATABASES = {
-    'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-```
-
-### Correr el servidor local
-
-1. Correr el servidor local de Django
-    `$ python manage.py runserver`
-2. Desde el navegador web se entra al servidor local de Django en la dirección _127.0.0.0:8000_ o
-_localhost:8000_
-3.
