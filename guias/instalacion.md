@@ -27,58 +27,21 @@ escritos en Python
 
 #### Gestionar Pip:
 
-* Instalar Pip:
-```
-    # apt-get install python-pip
-```
-* Desinstalar Pip:
-```
-    # apt-get remove python-pip
-```
+* Instalar Pip: `# apt-get install python-pip`
+* Desinstalar Pip: `# apt-get remove python-pip`
 
 #### Acciones con Pip:
-* Buscar un paquete
-```
-    $ pip search nombredelpaquete
-```
-
-* Instalar un paquete usando Pip
-```
-    $ pip install nombredelpaquete
-```
-
-* Instalar un paquete en una versión específica usando Pip
-```
-    $ pip install nombredelpaquete==version
-```
-
-* Remover un paquete
-```
-    $ pip unistall nombredelpaquete
-```
-
-* Listar los paquetes instalados:
-```
-    $ pip freeze
-```
-
-* Obtener información detallada de un paquete:
-```
-    $ pip show nombredelpaquete
-```
-
-* Verificar que estén instaladas las dependencias de un paquete:
-```
-    $ pip check nombredelpaquete
-```
-
-* Ayuda
-```
-    $ pip help
-```
+* Buscar un paquete: `$ pip search nombredelpaquete`
+* Instalar un paquete usando Pip: `$ pip install nombredelpaquete`
+* Instalar un paquete en una versión específica usando Pip: `$ pip install nombredelpaquete==version`
+* Remover un paquete: `$ pip unistall nombredelpaquete`
+* Listar los paquetes instalados: `$ pip freeze`
+* Obtener información detallada de un paquete: `$ pip show nombredelpaquete`
+* Verificar que estén instaladas las dependencias de un paquete: `$ pip check nombredelpaquete`
+* Ayuda: `$ pip help`
 
 #### Apuntar a un mirror pip:
-Para utilizar un mirror de Python en específico se modifica el archivo *pip.conf*
+Para utilizar un mirror de Python en específico se modifica el archivo *pip.conf*:
 ```
     $ nano ~/.pip/pip.conf
 ```
@@ -102,21 +65,10 @@ como confiable se utiliza la directiva *--trusted-host nombremirror* para que ac
 los permisos para instalar paquetes usando pip varían, desde la máquina anfitrión se requieren
 permisos de superusuario, sin embargo para instalar desde un entorno virtual no.
 
-* Instalar la versión más reciente de Django:
-```
-    $ pip install django
-```
-
+* Instalar la versión más reciente de Django: `$ pip install django`
 * Para solicitar la instalación de una versión en específico de Django, basta con agregar ==version
-al final de la sentencia anterior. Por ejemplo, para instalar la versión 2.0:
-```
-    $ pip install Django==2.0
-```
-
-* Desinstalar Django:
-```
-    $ pip uninstall django
-```
+al final de la sentencia anterior. Por ejemplo, para instalar la versión 2.0: `$ pip install Django==2.0`
+* Desinstalar Django: `$ pip uninstall django`
 
 ### Instalando Django desde su comprimido
 1. Descargar la versión 1.11.9 (LTS) de Django desde su

@@ -7,78 +7,14 @@ Fecha de Elaboración: 26-12-2017 (dd,mm,aaaa)
 
 // -------------------------------------- Proyectos [BEGIN] ------------------------------------- //
 
-Construir un nuevo proyecto:
-  $ django-admin.py startproject nombredelproyecto
-
-Django crea el siguiente esquema de archivos:
-nombredelproyecto/
-  manage.py
-  nombredelproyecto/
-    __init__.py
-    settings.py
-    urls.py
-    wsgi.py
-
-
-# Opcional ----- (begin)
-
-Antes de comenzar a crear aplicaciones hay que crear un directorio donde almacenar las aplicaciones
-para que su manejo sea ordenado:
-1. Entrar en el directorio del proyecto:
-  $ cd nombredelproyecto
-
-2. Crear el directorio, el nombre del directorio es arbitrario y completamente personalizado:
-  $ mkdir apps
-
-3. Entrar en el directorio y crear un archivo "__init__.py" (sirve para avisarle a Django que es un
-paquete o que hay paquetes dentro de él).
-  $ cd apps
-  $ touch __init__.py
-
-# Opcional ----- (end)
 
 
 
-Crear una nueva aplicación, que se llamará "primerapp" usando el comando:
-  $ django-admin.py startapp primerapp
-Este comando creará un directorio (primerapp) que contendrá los archivos que se requieren para crear
-una aplicación con Django.
 
-Agregar la aplicación al proyecto:
-Para ello hay que modificar el archivo settings.py que está en el directorio del proyecto (primerproyecto).
-Aquí hay que buscar la sección INSTALLED_APPS y agregar la nueva aplicación escribiendo 'primerapp',
-Así:
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'primerapp',
-]
 
-En caso de haber creado un directorio para almacenar las aplicaciones, se debe anteponer el nombre
-del directorio antes de la aplicación que se va a agregar, por ejemplo:
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'apps.primerapp',
-]
 
-5. Correr la aplicación
-  5.1. Se levanta el servidor de Django usando el comando:
-    $ ./manage.py runserver
-  5.2. Desde el navegador web se entra al servidor local de Django en la dirección 127.0.0.0:8000
-  que trae por defecto configurada
-
-Ya se tiene creado el esqueleto de una aplicación usando Django.
 
 // -------------------------------------- Proyectos [ENDED] ------------------------------------- //
 
