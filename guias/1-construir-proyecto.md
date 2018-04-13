@@ -1,6 +1,6 @@
 ### Construir un nuevo proyecto en Django
 Para construir un nuevo proyecto utilizando Django se debe escribir en la consola el comando:
-`~$ django-admin.py startproject nombredelproyecto`
+* `~$ django-admin.py startproject nombredelproyecto`
 
 Django crea el siguiente esquema de archivos:
 ```

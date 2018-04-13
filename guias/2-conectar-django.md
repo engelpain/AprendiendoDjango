@@ -6,7 +6,7 @@ cómo conectarlo tres de las más usadas: MySQL, PostgreSQL y SQLite.
 #### SQLite + Django
 Django (al momento de inicializar un proyecto) trae una conexión por defecto con SQLite3.
 Se puede verificar esto en `/nombreProyecto/settings.py` en el apartado `# Database`:
-```
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -80,6 +80,7 @@ DATABASES = {
 
 #### Migrar los modelos a la base de datos
 Luego de realizar la configuración hay que migrar los modelos para comprobar que se realizó la
-conexión con éxito: `/$ python manage.py migrate`
+conexión con éxito:
+* `/$ python manage.py migrate`
 
 [Documentación oficial](https://docs.djangoproject.com/en/1.11/ref/settings/#databases)
