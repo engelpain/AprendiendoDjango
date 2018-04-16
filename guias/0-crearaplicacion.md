@@ -18,6 +18,10 @@ El símbolo al principio de una línea de comandos indica:
 > Nota Importante: Django utiliza 4 espacios de identación, es importante que en todos los archivos
 siga esta directiva, en caso de omitirla puede que el proyecto de errores.
 
+> Nota Importante 2: Django no admite utilizar ñ o letras acentuadas antes de la versión 1.11.3,
+incluso en comentarios del código. Se debe tomar en consideración ésto a la hora de realizar otros
+tutoriales con el Framework.
+
 > La versión de Django utilizada para esta guía es Django 1.11.3.
 
 ### Pasos para crear un proyecto
@@ -26,4 +30,6 @@ siga esta directiva, en caso de omitirla puede que el proyecto de errores.
 3. [Correr el servidor local por primera vez](3-localhost.md)
 4. [Crear una aplicación](4-crear-aplicacion.md)
 5. [Crear modelos del app](5-crear-modelos.md)
-6. [Crear URLS](6-crear-urls.md)
+6. [Listar posts del modelo](6-listar-posts.md)
+
+Para crear este proyecto se siguío [este ejemplo](https://www.groloop.com/django-1-11-3-crear-crud/).

@@ -7,4 +7,4 @@ Fecha de Elaboración: 26-12-2017 (dd,mm,aaaa)
 
 * [Instalación de Django](./guias/instalacion.md)
 * [Crear un entorno virtual](./guias/virtualenv.md)
-* [Crear una aplicación](./guias/crearaplicacion.md)
+* [Crear una aplicación](./guias/0-crearaplicacion.md)
