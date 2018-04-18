@@ -20,7 +20,8 @@ siga esta directiva, en caso de omitirla puede que el proyecto de errores.
 
 > Nota Importante 2: Django no admite utilizar ñ o letras acentuadas antes de la versión 1.11.3,
 incluso en comentarios del código. Se debe tomar en consideración ésto a la hora de realizar otros
-tutoriales con el Framework.
+tutoriales con el Framework. Para poder comentar y utilizar esas letras se debe comentar en el
+inicio del código: `# -*- coding: utf-8 -*-`
 
 > La versión de Django utilizada para esta guía es Django 1.11.3.
 
