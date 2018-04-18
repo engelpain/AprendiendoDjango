@@ -62,7 +62,7 @@ def index(request):
 
 6. Dentro de `templates` hay que crear un archivo que servirá de base para todas las vistas llamado
 `base.html`:
-```phyton
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -79,7 +79,7 @@ def index(request):
 
 7. La view creada en el paso 4 apunta a un archivo que no existe llamado `index.html`, ésta estará
 en el directorio `templates` y heredará todo el código que está en `base.html`:
-```python
+```html
 {% extends "base.html" %}
  
 {% block content %}
