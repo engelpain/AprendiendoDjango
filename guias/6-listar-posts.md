@@ -43,14 +43,17 @@ urlpatterns = [
 ```python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.shortcuts import render
 
-# Create your views here.
+# Se importa el modelo Articulo para poder consultarlo en la DB
 from .models import Articulo
 
+# READ: View para consultar datos, predeterminada como índice de la página
 def index(request):
     context = {
+        # consultaArticulos es un diccionario que se le envia a la vista con los elementos de la
+        # consulta que está solicitando. El mismo debe ser convocado en la vista para poder ser
+        # utilizado. 
         'consultaArticulos': Articulo.objects.all().order_by('-id')
     }
     return render(request, 'index.html', context)
@@ -83,11 +86,15 @@ en el directorio `templates` y heredará todo el código que está en `base.html
 {% extends "base.html" %}
  
 {% block content %}
-  {% if posts %}
-    {% for post in posts %}
-      <h3>{{ post.title }}</h3>
-      <div>{{ post.body }}</div>
-      <hr>
+  {% if consultaArticulos %}
+    {% for post in consultaArticulos %}
+      
+      <!-- Título del post -->
+      <h3>{{ post.titulo }}</h3>
+      
+      <!-- Cuerpo del post -->
+      <div>{{ post.cuerpo }}</div>
+
     {% endfor %}
   {% else %}
     <p>No posts</p>
