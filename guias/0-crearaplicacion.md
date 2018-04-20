@@ -32,5 +32,6 @@ inicio del código: `# -*- coding: utf-8 -*-`
 4. [Crear una aplicación](4-crear-aplicacion.md)
 5. [Crear modelos del app](5-crear-modelos.md)
 6. [Listar posts del modelo](6-listar-posts.md)
+7. [Agregar posts en la base de datos](7-ingresar-posts.md)
 
 Para crear este proyecto se siguío [este ejemplo](https://www.groloop.com/django-1-11-3-crear-crud/).
