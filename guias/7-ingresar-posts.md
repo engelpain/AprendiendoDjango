@@ -82,7 +82,6 @@ def add(request):
 ```
 
 4. Se crea `add.html` en `/nombreapp/templates/add.html`
-
 ```python
 {% extends "base.html" %}
  
