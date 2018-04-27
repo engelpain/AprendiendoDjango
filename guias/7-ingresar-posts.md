@@ -93,3 +93,26 @@ def add(request):
   </form>
 {% endblock %}
 ```
+
+5. Crear un enlace a la nueva url agregada en `/nombreapp/templates/index.html`
+```python
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<a href="/add">+ Agregar registro</a>
+
+  {% if consultaArticulos %}
+    {% for post in consultaArticulos %}
+      <!-- {{ post.titulo }} [BEGIN] -->
+      <h3>{{ post.titulo }}</h3>
+      <div>{{ post.cuerpo }}</div>
+      <!-- {{ post.titulo }} [ENDED] -->
+    {% endfor %}
+  {% else %}
+    <p>No posts</p>
+  {% endif %}
+
+{% endblock %}
+```
