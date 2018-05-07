@@ -48,12 +48,24 @@ from django.shortcuts import render
 # Se importa el modelo Articulo para poder consultarlo en la DB
 from .models import Articulo
 
-# READ: View para consultar datos, predeterminada como índice de la página
+"""
+# READ
+  - Nombre del método: index
+  - Descripción: View para consultar datos, predeterminada como índice de la página.
+  - Requiere: 1 argumento (request)
+    - request: la solicitud de la url de entrar a este método
+  - Retorna: 1 función con 3 argumentos:
+    - render: Renderiza la información de los 3 argumentos en el navegador
+      - request: la solicitud de la url de entrar a este método
+      - index.html: el template que llenará
+      - context: los datos que se mostrarán
+        - Dentro del context se realizará una consulta a la base de datos llamada consultaArticulos:
+          consultaArticulos es un diccionario que se le envia a la vista con los elementos de la
+          consulta que está solicitando, en este caso, todos los objetos "Articulo" ordenados de
+          mayor a menor por el id.
+"""
 def index(request):
     context = {
-        # consultaArticulos es un diccionario que se le envia a la vista con los elementos de la
-        # consulta que está solicitando. El mismo debe ser convocado en la vista para poder ser
-        # utilizado. 
         'consultaArticulos': Articulo.objects.all().order_by('-id')
     }
     return render(request, 'index.html', context)
