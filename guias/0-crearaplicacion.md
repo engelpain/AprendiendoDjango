@@ -35,5 +35,6 @@ inicio del código: `# -*- coding: utf-8 -*-`
 7. [Agregar posts en la base de datos](7-ingresar-posts.md)
 8. [Modificar posts en la base de datos](8-actualizar-posts.md)
 9. [Eliminar posts en la base de datos](9-eliminar-posts.md)
+10. [Ejercicio terminado](../nombredelproyecto)
 
 Para crear este proyecto se siguío [este ejemplo](https://www.groloop.com/django-1-11-3-crear-crud/).

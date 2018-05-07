@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<a href="/add">+ Agregar registro</a>
+
+  {% if consultaArticulos %}
+    {% for post in consultaArticulos %}
+      <!-- {{ post.titulo }} [BEGIN] -->
+      <h3>{{ post.titulo }}</h3>
+      <div>{{ post.cuerpo }}</div>
+      <a href="{% url 'articulos_edit' id=post.id %}">Editar</a> 
+      <a href="{% url 'articulos_delete' id=post.id %}">Eliminar</a>
+      <!-- {{ post.titulo }} [ENDED] -->
+    {% endfor %}
+  {% else %}
+    <p>No hay artículos</p>
+  {% endif %}
+
+{% endblock %}
