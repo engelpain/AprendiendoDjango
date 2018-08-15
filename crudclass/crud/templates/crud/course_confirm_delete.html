@@ -1,0 +1,4 @@
+<form method="post">{% csrf_token %}
+    ¿Estás seguro que deseas borrar el curso "<b>{{ object.name }}</b>"?
+    <input type="submit" value="Eliminar" />
+</form>
